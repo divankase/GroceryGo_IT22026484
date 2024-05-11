@@ -17,6 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="18dp"
         android:fontFamily="@font/baloo_tamma"
+        android:textStyle="bold"
         android:text="Add Grocery"
         android:textColor="@color/green"
         android:textSize="26sp" />
@@ -51,6 +52,7 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/purple_border"
         android:fontFamily="@font/b612"
+        android:textStyle="italic"
         android:gravity="top"
         android:hint="Enter the content"
         android:padding="12dp"
