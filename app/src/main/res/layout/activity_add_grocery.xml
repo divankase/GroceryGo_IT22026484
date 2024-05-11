@@ -15,8 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/b612_mono_bold"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/baloo_tamma"
         android:text="Add Grocery"
         android:textColor="@color/green"
         android:textSize="26sp" />
