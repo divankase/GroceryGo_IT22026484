@@ -19,7 +19,7 @@
         android:fontFamily="@font/baloo_tamma"
         android:text="View Grocery List"
         android:textColor="@color/green"
-        android:textSize="24sp" />
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/updateTitleEditText"
