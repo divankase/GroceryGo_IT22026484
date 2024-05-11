@@ -24,6 +24,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, FirstViews::class.java)
             startActivity(intent)
             finish() // Optional, depending on whether you want to keep MainActivity in the back stack
-        }, 1500) // Delay in milliseconds (5 seconds)
+        }, 2000) // Delay in milliseconds (5 seconds)
     }
 }
