@@ -2,6 +2,8 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/b612</item>
+        <item>@font/b612_bold</item>
+        <item>@font/b612_mono</item>
         <item>@font/b612_mono_bold</item>
         <item>@font/baloo_tamma</item>
         <item>@font/chelsea_market</item>
