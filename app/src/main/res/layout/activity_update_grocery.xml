@@ -51,7 +51,7 @@
         android:layout_below="@id/updateTitleEditText"       android:layout_marginTop="12dp"
         android:background="@drawable/purple_border"
         android:fontFamily="@font/b612"
-        android:textStyle="bold"
+        android:textStyle="italic"
         android:gravity="top"
         android:hint="Enter the description"
         android:padding="12dp"
