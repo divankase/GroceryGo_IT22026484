@@ -19,7 +19,7 @@
         android:fontFamily="@font/baloo_tamma"
         android:text="Add Grocery"
         android:textColor="@color/green"
-        android:textSize="26sp" />
+        android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/saveButton"
@@ -54,7 +54,7 @@
         android:fontFamily="@font/b612"
         android:textStyle="italic"
         android:gravity="top"
-        android:hint="Enter the content"
+        android:hint="Enter the grocery list"
         android:padding="12dp"
         android:textSize="18sp" />
 
