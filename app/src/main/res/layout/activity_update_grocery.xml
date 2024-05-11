@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".UpdateGroceryActivity"
     android:orientation="vertical"
     android:padding="16dp">
@@ -15,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/b612"
+        android:fontFamily="@font/baloo_tamma"
         android:text="Edit Grocery"
         android:textColor="@color/green"
         android:textSize="24sp" />
