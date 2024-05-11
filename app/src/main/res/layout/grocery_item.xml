@@ -22,11 +22,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/b612_mono"
+                android:fontFamily="@font/b612_mono_bold"
                 android:text="Title"
                 android:textColor="@color/green"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="italic"
+                 />
 
             <ImageView
                 android:id="@+id/updateButton"
@@ -62,6 +63,7 @@
             android:fontFamily="@font/b612_mono"
             android:maxLines="3"
             android:text="Content"
+            android:textSize="16dp"
             android:textColor="@color/black" />
 
     </LinearLayout>
