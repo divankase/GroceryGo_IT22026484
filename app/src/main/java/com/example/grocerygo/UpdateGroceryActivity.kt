@@ -27,14 +27,14 @@ class UpdateGroceryActivity : AppCompatActivity() {
         }
 
         val grocery = db.getGroceryByID(groceryId)
-        binding.updateTitleEditText.setText(grocery.title)
+        binding.datePickerEditText.setText(grocery.title)
         binding.updateContentEditText.setText(grocery.content)
 
         binding.updateSaveButton.setOnClickListener{
-            val newTitle = binding.updateTitleEditText.text.toString()
+            val newTitle = binding.datePickerEditText.text.toString()
             val newContent = binding.updateContentEditText.text.toString()
 
-            val updatedGrocery = Grocery(groceryId,newTitle,newContent)
+            val updatedGrocery = Grocery(groceryId,newTitle,newContent, isCompleted = false)
             db.updateGrocery(updatedGrocery)
             finish()
             Toast.makeText(this,"Grocery List Updated", Toast.LENGTH_SHORT).show()

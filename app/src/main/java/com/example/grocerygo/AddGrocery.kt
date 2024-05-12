@@ -12,6 +12,7 @@ import com.example.grocerygo.databinding.ActivityAddGroceryBinding
 class AddGrocery : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddGroceryBinding
+
     private lateinit var db : GroceryDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,9 +29,9 @@ class AddGrocery : AppCompatActivity() {
 
         db = GroceryDatabaseHelper(this)
         binding.saveButton.setOnClickListener {
-            val title = binding.titleEditText.text.toString()
+            val title = binding.datePickerEditText.text.toString()
             val content = binding.contentEditText.text.toString()
-            val grocery = Grocery(0, title, content)
+            val grocery = Grocery(0, title, content, isCompleted = false)
 
             val isSuccess = db.insertGrocery(grocery)
             if (isSuccess) {
@@ -44,4 +45,6 @@ class AddGrocery : AppCompatActivity() {
 
 
     }
+
+
 }

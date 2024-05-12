@@ -30,8 +30,8 @@
         android:layout_alignTop="@+id/addNoteHeading"
         android:layout_marginEnd="6dp"/>
 
-    <EditText
-        android:id="@+id/titleEditText"
+    <com.example.grocerygo.DatePickerEditText
+        android:id="@+id/datePickerEditText"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@+id/addNoteHeading"
@@ -48,7 +48,7 @@
         android:id="@+id/contentEditText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/titleEditText"
+        android:layout_below="@id/datePickerEditText"
         android:layout_marginTop="12dp"
         android:background="@drawable/purple_border"
         android:fontFamily="@font/b612"

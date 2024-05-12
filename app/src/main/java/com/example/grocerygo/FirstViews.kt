@@ -30,9 +30,6 @@ class FirstViews : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
-
 }
 
     override fun onResume() {
