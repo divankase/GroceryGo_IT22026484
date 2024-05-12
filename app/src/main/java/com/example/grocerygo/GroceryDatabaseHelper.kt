@@ -14,10 +14,11 @@ class GroceryDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABA
         private const val COLUMN_ID = "id"
         private const val COLUMN_TITLE = "title"
         private const val COLUMN_CONTENT = "content"
+        private const val COLUMN_COMPLETED = "completed"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTableQuery = "CREATE TABLE $TABLE_NAME($COLUMN_ID INTEGER PRIMARY KEY, $COLUMN_TITLE TEXT, $COLUMN_CONTENT TEXT)"
+        val createTableQuery = "CREATE TABLE $TABLE_NAME($COLUMN_ID INTEGER PRIMARY KEY, $COLUMN_TITLE DATE, $COLUMN_CONTENT TEXT,$COLUMN_COMPLETED BOOLEAN)"
         db?.execSQL(createTableQuery)
     }
 
@@ -51,7 +52,7 @@ class GroceryDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABA
             val content = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONTENT))
 
             // Create Grocery object and add it to the list
-            val grocery = Grocery(id, title, content)
+            val grocery = Grocery(id, title, content, isCompleted = false)
             groceryList.add(grocery)
         }
         cursor.close()
@@ -85,7 +86,7 @@ class GroceryDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABA
 
         curser.close()
         db.close()
-        return Grocery(id,title,content)
+        return Grocery(id,title,content, isCompleted = false )
     }
 
     fun deleteGrocery(groceryId: Int){
@@ -95,6 +96,19 @@ class GroceryDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABA
         db.delete(TABLE_NAME,whereClause,whereArgs)
         db.close()
     }
+
+    fun updateGroceryCompletionStatus(groceryId: Int, isCompleted: Boolean): Boolean {
+        val db = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put(COLUMN_COMPLETED, if (isCompleted) 1 else 0)
+        }
+
+        val updatedRows = db.update(TABLE_NAME, contentValues, "$COLUMN_ID=?", arrayOf(groceryId.toString()))
+        db.close()
+
+        return updatedRows > 0
+    }
+
 
 
 
