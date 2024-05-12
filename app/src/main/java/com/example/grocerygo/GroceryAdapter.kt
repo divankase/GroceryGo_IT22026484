@@ -96,6 +96,23 @@ class GroceryAdapter (private var grocery: List<Grocery>,context: Context):
                     .setNegativeButton("No") { dialog, _ ->
                         // Dismiss the dialog if "No" is clicked
                         dialog.dismiss()
+                        Toast.makeText(
+                            holder.itemView.context,
+                            "Automatically delete within 1 min",
+                            Toast.LENGTH_SHORT
+                            ).show()
+                        android.os.Handler().postDelayed({
+                            db.deleteGrocery(grocery.id)
+                            Toast.makeText(
+                                holder.itemView.context,
+                                "Deleted ${grocery.title} list",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            refreshData(db.getAllGroceries())
+                            holder.checkBox.isChecked=false
+                            db.close()
+                            holder.checkBox.isEnabled=true
+                        }, 6000)
                     }
                     .create()
                     .show()
