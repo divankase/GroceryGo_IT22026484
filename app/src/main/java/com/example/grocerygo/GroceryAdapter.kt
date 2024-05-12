@@ -96,6 +96,9 @@ class GroceryAdapter (private var grocery: List<Grocery>,context: Context):
                     .setNegativeButton("No") { dialog, _ ->
                         // Dismiss the dialog if "No" is clicked
                         dialog.dismiss()
+                        holder.checkBox.isChecked=true
+                        db.close()
+                        holder.checkBox.isEnabled=false
                         Toast.makeText(
                             holder.itemView.context,
                             "Grocery List Completed",
